@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Button } from "./ui/button"
 
 interface StoryState {
@@ -55,6 +55,7 @@ export function StoryDemo() {
   const [isTyping, setIsTyping] = useState(false)
   const [showThinking, setShowThinking] = useState(false)
   const [showChoices, setShowChoices] = useState(false)
+  const storyTextRef = useRef<HTMLDivElement>(null)
 
   const currentStory = storyStates[currentState]
 
@@ -92,13 +93,27 @@ export function StoryDemo() {
     setShowThinking(true)
     setShowChoices(false)
     
+    // Scroll to story text
+    storyTextRef.current?.scrollIntoView({ 
+      behavior: 'smooth', 
+      block: 'center' 
+    })
+    
     setTimeout(() => {
       setStoryHistory([...storyHistory, nextState])
       setCurrentState(nextState)
       setShowThinking(false)
       
       if (!storyStates[nextState].choices) {
-        setTimeout(() => setShowWaitlist(true), 2500)
+        // Wait for typing to complete before showing waitlist
+        const checkTypingComplete = () => {
+          if (!isTyping) {
+            setTimeout(() => setShowWaitlist(true), 1500)
+          } else {
+            setTimeout(checkTypingComplete, 100)
+          }
+        }
+        setTimeout(checkTypingComplete, 1000)
       }
     }, 1500) // Thinking duration
   }
@@ -188,7 +203,7 @@ export function StoryDemo() {
 
         {/* Story text */}
         <div className="text-center space-y-8 md:space-y-12">
-          <div className="max-w-4xl mx-auto px-2 transition-all duration-500 ease-in-out">
+          <div ref={storyTextRef} className="max-w-4xl mx-auto px-2 transition-all duration-500 ease-in-out">
             {showThinking ? (
               <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-foreground/60 leading-relaxed font-light italic min-h-[2em] flex items-center justify-center animate-fade-in">
                 <span className="animate-pulse">Thinking</span>
@@ -244,7 +259,7 @@ export function StoryDemo() {
           )}
 
           {/* Story end states */}
-          {showWaitlist && (
+          {showWaitlist && !isTyping && (
             <div className="text-center space-y-6 sm:space-y-8 pt-6 sm:pt-8 border-t border-primary/20 max-w-2xl mx-auto px-2 animate-fade-in">
               <div className="space-y-3 sm:space-y-4 animate-slide-up">
                 <div className="text-3xl sm:text-4xl animate-bounce">✨</div>
@@ -274,7 +289,7 @@ export function StoryDemo() {
             </div>
           )}
 
-          {!currentStory.choices && !showWaitlist && (
+          {!currentStory.choices && !showWaitlist && !isTyping && (
             <div className="text-center pt-6 sm:pt-8 border-t border-primary/20 max-w-xl mx-auto px-2 animate-fade-in">
               <div className="space-y-4 sm:space-y-6 animate-slide-up">
                 <p className="text-base sm:text-lg text-muted-foreground animate-fade-in">To be continued...</p>

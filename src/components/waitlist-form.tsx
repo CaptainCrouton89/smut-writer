@@ -1,35 +1,56 @@
-'use client'
+"use client";
 
-import { useState } from "react"
-import { Button } from "./ui/button"
-import { Input } from "./ui/input"
+import { useState } from "react";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
 
 export function WaitlistForm() {
-  const [email, setEmail] = useState('')
-  const [submitted, setSubmitted] = useState(false)
-  const [loading, setLoading] = useState(false)
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setLoading(true)
-    
+    e.preventDefault();
+    setLoading(true);
+
     // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    
-    setSubmitted(true)
-    setLoading(false)
-  }
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+
+    setSubmitted(true);
+    setLoading(false);
+  };
 
   if (submitted) {
     return (
       <div className="w-full max-w-lg mx-auto text-center space-y-6 sm:space-y-8 relative px-4">
         {/* Flowing success curves */}
         <div className="absolute inset-0 pointer-events-none rounded-3xl overflow-hidden">
-          <svg className="absolute inset-0 w-full h-full opacity-30" preserveAspectRatio="none" viewBox="0 0 100 100" fill="none">
+          <svg
+            className="absolute inset-0 w-full h-full opacity-30"
+            preserveAspectRatio="none"
+            viewBox="0 0 100 100"
+            fill="none"
+          >
             <defs>
-              <linearGradient id="successGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="currentColor" stopOpacity="0.2" className="text-primary" />
-                <stop offset="100%" stopColor="currentColor" stopOpacity="0.1" className="text-accent" />
+              <linearGradient
+                id="successGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop
+                  offset="0%"
+                  stopColor="currentColor"
+                  stopOpacity="0.2"
+                  className="text-primary"
+                />
+                <stop
+                  offset="100%"
+                  stopColor="currentColor"
+                  stopOpacity="0.1"
+                  className="text-accent"
+                />
                 <animateTransform
                   attributeName="gradientTransform"
                   type="translate"
@@ -39,8 +60,8 @@ export function WaitlistForm() {
                 />
               </linearGradient>
             </defs>
-            <path 
-              d="M-5,50 Q20,20 45,50 Q70,80 105,35 L105,100 L-5,100 Z" 
+            <path
+              d="M-5,50 Q20,20 45,50 Q70,80 105,35 L105,100 L-5,100 Z"
               fill="url(#successGradient)"
             >
               <animateTransform
@@ -53,40 +74,58 @@ export function WaitlistForm() {
             </path>
           </svg>
         </div>
-        
+
         {/* Background glow */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/10 to-primary/20 rounded-3xl blur-xl opacity-60" />
-        
+
         <div className="relative bg-card/60 backdrop-blur-sm border border-primary/30 rounded-3xl p-6 sm:p-8 md:p-12">
           <div className="space-y-4 sm:space-y-6">
             <div className="text-4xl sm:text-5xl md:text-6xl">🔥</div>
             <div className="space-y-3 sm:space-y-4">
-              <h3 className="text-2xl sm:text-3xl font-bold text-primary">Welcome to the Inner Circle</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold text-primary">
+                Welcome to the Inner Circle
+              </h3>
               <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                Your invitation has been secured. We'll reach out privately when your exclusive access is ready.
-              </p>
-            </div>
-            
-            <div className="pt-3 sm:pt-4 border-t border-primary/20">
-              <p className="text-sm text-muted-foreground/80">
-                Check your email for a special surprise from us.
+                You&apos;re on the list! We&apos;ll notify you as soon as we
+                launch with early access.
               </p>
             </div>
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   return (
     <div className="w-full max-w-lg mx-auto relative px-4">
       {/* Subtle form curves */}
       <div className="absolute inset-0 pointer-events-none rounded-3xl overflow-hidden">
-        <svg className="absolute inset-0 w-full h-full opacity-20" preserveAspectRatio="none" viewBox="0 0 100 100" fill="none">
+        <svg
+          className="absolute inset-0 w-full h-full opacity-20"
+          preserveAspectRatio="none"
+          viewBox="0 0 100 100"
+          fill="none"
+        >
           <defs>
-            <linearGradient id="formGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="currentColor" stopOpacity="0.1" className="text-accent" />
-              <stop offset="100%" stopColor="currentColor" stopOpacity="0.15" className="text-primary" />
+            <linearGradient
+              id="formGradient"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop
+                offset="0%"
+                stopColor="currentColor"
+                stopOpacity="0.1"
+                className="text-accent"
+              />
+              <stop
+                offset="100%"
+                stopColor="currentColor"
+                stopOpacity="0.15"
+                className="text-primary"
+              />
               <animateTransform
                 attributeName="gradientTransform"
                 type="translate"
@@ -96,8 +135,8 @@ export function WaitlistForm() {
               />
             </linearGradient>
           </defs>
-          <path 
-            d="M-5,25 Q35,15 70,25 Q85,35 105,20 L105,100 L-5,100 Z" 
+          <path
+            d="M-5,25 Q35,15 70,25 Q85,35 105,20 L105,100 L-5,100 Z"
             fill="url(#formGradient)"
           >
             <animateTransform
@@ -108,10 +147,10 @@ export function WaitlistForm() {
               repeatCount="indefinite"
             />
           </path>
-          <path 
-            d="M-5,65 Q45,55 105,65" 
-            stroke="url(#formGradient)" 
-            strokeWidth="0.5" 
+          <path
+            d="M-5,65 Q45,55 105,65"
+            stroke="url(#formGradient)"
+            strokeWidth="0.5"
             fill="none"
           >
             <animateTransform
@@ -124,27 +163,30 @@ export function WaitlistForm() {
           </path>
         </svg>
       </div>
-      
+
       {/* Background glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 rounded-3xl blur-xl opacity-40" />
-      
+
       <div className="relative bg-card/60 backdrop-blur-sm border border-primary/30 rounded-3xl overflow-hidden">
         {/* Header */}
         <div className="bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 p-4 sm:p-6 md:p-8 text-center border-b border-primary/20">
           <div className="space-y-3 sm:space-y-4">
-            <h3 className="text-xl sm:text-2xl font-bold text-foreground">Request Private Access</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-foreground">
+              Join the Launch Waitlist
+            </h3>
             <p className="text-base sm:text-lg text-muted-foreground">
-              Join thousands exploring their deepest desires in complete privacy
+              Be among the first to experience our interactive stories when we
+              launch
             </p>
           </div>
         </div>
-        
+
         {/* Form */}
         <div className="p-4 sm:p-6 md:p-8">
           <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             <div className="space-y-3 sm:space-y-4">
               <label className="block text-sm font-medium text-muted-foreground text-left">
-                Your private email address
+                Your email address
               </label>
               <Input
                 type="email"
@@ -155,9 +197,9 @@ export function WaitlistForm() {
                 className="w-full h-12 sm:h-14 px-4 sm:px-6 text-base sm:text-lg bg-input/60 border-primary/30 focus:border-primary/60 rounded-xl placeholder:text-muted-foreground/60 focus:ring-2 focus:ring-primary/20 transition-all duration-300"
               />
             </div>
-            
-            <Button 
-              type="submit" 
+
+            <Button
+              type="submit"
               disabled={loading}
               size="lg"
               className="w-full h-12 sm:h-14 bg-primary hover:bg-primary/90 text-primary-foreground text-base sm:text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50"
@@ -165,25 +207,18 @@ export function WaitlistForm() {
               {loading ? (
                 <div className="flex items-center gap-2 sm:gap-3">
                   <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
-                  <span className="hidden sm:inline">Securing your access...</span>
+                  <span className="hidden sm:inline">
+                    Securing your access...
+                  </span>
                   <span className="sm:hidden">Securing...</span>
                 </div>
               ) : (
-                'Request Invitation'
+                "Join Waitlist"
               )}
             </Button>
           </form>
-          
-          <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-primary/20 text-center space-y-2 sm:space-y-3">
-            <p className="text-sm text-muted-foreground/80">
-              <span className="text-accent">✓</span> 100% Private & Secure
-            </p>
-            <p className="text-xs text-muted-foreground/60 leading-relaxed">
-              We respect your privacy absolutely. Your email stays confidential and you can leave anytime.
-            </p>
-          </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

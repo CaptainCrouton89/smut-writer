@@ -39,7 +39,7 @@ export default function Home() {
                 attributeName="gradientTransform"
                 type="translate"
                 values="0,0; 20,5; 0,0"
-                dur="30s"
+                dur="15s"
                 repeatCount="indefinite"
               />
             </linearGradient>
@@ -60,7 +60,7 @@ export default function Home() {
                 attributeName="gradientTransform"
                 type="translate"
                 values="0,0; -15,8; 0,0"
-                dur="45s"
+                dur="22s"
                 repeatCount="indefinite"
               />
             </linearGradient>
@@ -74,7 +74,7 @@ export default function Home() {
               attributeName="transform"
               type="translate"
               values="0,0; -2,3; 0,0"
-              dur="35s"
+              dur="17s"
               repeatCount="indefinite"
             />
           </path>
@@ -90,7 +90,7 @@ export default function Home() {
               attributeName="transform"
               type="translate"
               values="0,0; 5,2; 0,0"
-              dur="40s"
+              dur="10s"
               repeatCount="indefinite"
             />
           </path>
@@ -104,7 +104,7 @@ export default function Home() {
               attributeName="transform"
               type="translate"
               values="0,0; -3,4; 0,0"
-              dur="50s"
+              dur="15s"
               repeatCount="indefinite"
             />
           </path>
@@ -121,35 +121,27 @@ export default function Home() {
 
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-6xl mx-auto space-y-12 md:space-y-16">
-            {/* Exclusive badge */}
-            <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 bg-primary/15 border border-primary/30 rounded-full text-primary font-medium backdrop-blur-sm text-sm sm:text-base">
-              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              <span className="hidden sm:inline">
-                Adults Only • Discretion Guaranteed
-              </span>
-              <span className="sm:hidden">18+ Only</span>
-            </div>
-
             {/* Main headline - bold and seductive */}
             <div className="space-y-6 md:space-y-8">
               <h1 className="text-4xl sm:text-5xl md:text-8xl lg:text-9xl font-bold tracking-tight leading-[0.85]">
-                <span className="block text-foreground">Your</span>
-                <span className="block text-primary">Forbidden</span>
-                <span className="block text-foreground">Fantasy</span>
+                <span className="block text-foreground">Interactive</span>
+                <span className="block text-primary">Romance</span>
+                <span className="block text-foreground">That</span>
                 <span className="block text-accent italic font-light">
-                  Awaits
+                  Responds
                 </span>
               </h1>
 
               <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4">
-                Interactive erotic fiction where{" "}
-                <em className="text-primary">your choices</em> decide how deep
-                the passion goes. Every decision shapes your desire.
+                Passionate stories with real chemistry and{" "}
+                <em className="text-primary">irresistible tension</em>. Choose
+                how the romance unfolds, control the pace, explore every spark
+                of desire.
               </p>
             </div>
 
             {/* Bold CTA */}
-            <div className="pt-8 md:pt-12">
+            <div className="pt-8 md:pt-12 pb-16 md:pb-20">
               <Button
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 sm:px-12 md:px-16 py-4 sm:py-5 md:py-6 text-lg sm:text-xl font-bold rounded-full shadow-2xl hover:shadow-primary/20 transition-all duration-300 border border-primary/20"
@@ -205,19 +197,13 @@ export default function Home() {
                 Ready for <span className="text-primary">More</span>?
               </h2>
               <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground px-4">
-                Join thousands already exploring their deepest fantasies
+                Join a community of readers who love beautifully crafted stories
               </p>
             </div>
 
             <div className="max-w-xl mx-auto">
               <WaitlistForm />
             </div>
-
-            <p className="text-sm text-muted-foreground/60 max-w-2xl mx-auto leading-relaxed">
-              By joining, you confirm you are 18+ and consent to receiving adult
-              content. Your privacy is sacred to us - we never share your
-              information.
-            </p>
           </div>
         </div>
       </section>
@@ -227,7 +213,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-card/20" />
         <div className="relative container mx-auto px-6 lg:px-8 text-center">
           <p className="text-muted-foreground/60">
-            &copy; 2024 • 18+ Only • Your Secrets Stay Safe
+            &copy; 2025 • Secrets Stay Safe
           </p>
         </div>
       </footer>

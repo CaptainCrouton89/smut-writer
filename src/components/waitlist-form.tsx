@@ -3,21 +3,29 @@
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
+import { useMutation } from "convex/react";
+import { api } from "../../convex/_generated/api";
 
 export function WaitlistForm() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const addToWaitlist = useMutation(api.waitlist.add);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setError("");
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    setSubmitted(true);
-    setLoading(false);
+    try {
+      await addToWaitlist({ email });
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to join waitlist");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -196,6 +204,9 @@ export function WaitlistForm() {
                 required
                 className="w-full h-12 sm:h-14 px-4 sm:px-6 text-base sm:text-lg bg-input/60 border-primary/30 focus:border-primary/60 rounded-xl placeholder:text-muted-foreground/60 focus:ring-2 focus:ring-primary/20 transition-all duration-300"
               />
+              {error && (
+                <p className="text-sm text-red-500 text-left">{error}</p>
+              )}
             </div>
 
             <Button

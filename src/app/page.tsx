@@ -150,7 +150,7 @@ export default function Home() {
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                Experience It Now
+                Try for Yourself
               </Button>
             </div>
           </div>

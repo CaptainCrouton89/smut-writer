@@ -1,10 +1,10 @@
 "use client";
 
+import { useMutation } from "convex/react";
 import { useState } from "react";
+import { api } from "../../convex/_generated/api";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-import { useMutation } from "convex/react";
-import { api } from "../../convex/_generated/api";
 
 export function WaitlistForm() {
   const [email, setEmail] = useState("");
@@ -184,7 +184,10 @@ export function WaitlistForm() {
             </h3>
             <p className="text-base sm:text-lg text-muted-foreground">
               Be among the first to experience our interactive stories when we
-              launch
+              launch —{" "}
+              <span className="text-primary font-semibold">
+                and get 75% off your first three months
+              </span>
             </p>
           </div>
         </div>

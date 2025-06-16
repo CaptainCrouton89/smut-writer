@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Interactive Romance" }],
   creator: "Interactive Romance",
   publisher: "Interactive Romance",
-  metadataBase: new URL("https://interactive-romance.com"),
+  metadataBase: new URL("https://prereg.daytimereadinglist.com"),
   alternates: {
     canonical: "/",
   },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Interactive Romance Stories | Choose Your Own Adventure",
     description:
       "Experience passionate interactive romance stories where your choices shape the narrative. Immersive erotic fiction with real chemistry and irresistible tension.",
-    url: "https://interactive-romance.com",
+    url: "https://prereg.daytimereadinglist.com",
     siteName: "Interactive Romance",
     locale: "en_US",
     type: "website",

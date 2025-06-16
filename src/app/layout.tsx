@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import ConvexClientProvider from "./ConvexClientProvider";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,8 +15,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Interactive Romance Stories | Choose Your Own Adventure",
-  description: "Experience passionate interactive romance stories where your choices shape the narrative. Immersive erotic fiction with real chemistry and irresistible tension.",
-  keywords: "interactive romance, choose your own adventure, erotic fiction, interactive stories, romance novels, adult fiction",
+  description:
+    "Experience passionate interactive romance stories where your choices shape the narrative. Immersive erotic fiction with real chemistry and irresistible tension.",
+  keywords:
+    "interactive romance, choose your own adventure, erotic fiction, interactive stories, romance novels, adult fiction",
   authors: [{ name: "Interactive Romance" }],
   creator: "Interactive Romance",
   publisher: "Interactive Romance",
@@ -26,7 +28,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Interactive Romance Stories | Choose Your Own Adventure",
-    description: "Experience passionate interactive romance stories where your choices shape the narrative. Immersive erotic fiction with real chemistry and irresistible tension.",
+    description:
+      "Experience passionate interactive romance stories where your choices shape the narrative. Immersive erotic fiction with real chemistry and irresistible tension.",
     url: "https://interactive-romance.com",
     siteName: "Interactive Romance",
     locale: "en_US",
@@ -43,7 +46,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Interactive Romance Stories | Choose Your Own Adventure",
-    description: "Experience passionate interactive romance stories where your choices shape the narrative. Immersive erotic fiction with real chemistry and irresistible tension.",
+    description:
+      "Experience passionate interactive romance stories where your choices shape the narrative. Immersive erotic fiction with real chemistry and irresistible tension.",
     images: ["/heart-og.svg"],
     creator: "@interactive_romance",
   },
@@ -75,9 +79,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ConvexClientProvider>
-          {children}
-        </ConvexClientProvider>
+        <ConvexClientProvider>{children}</ConvexClientProvider>
       </body>
     </html>
   );

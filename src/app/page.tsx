@@ -3,6 +3,7 @@
 import { StoryDemo } from "@/components/story-demo";
 import { Button } from "@/components/ui/button";
 import { WaitlistForm } from "@/components/waitlist-form";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -121,6 +122,18 @@ export default function Home() {
 
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-6xl mx-auto space-y-12 md:space-y-16">
+            {/* Logo */}
+            <div className="w-full max-w-[200px] mx-auto mb-8">
+              <Image
+                src="/smut-logo.png"
+                alt="Interactive Romance Logo"
+                width={140}
+                height={140}
+                className="w-full h-auto"
+                priority
+              />
+            </div>
+            
             {/* Main headline - bold and seductive */}
             <div className="space-y-6 md:space-y-8">
               <h1 className="text-4xl sm:text-5xl md:text-8xl lg:text-9xl font-bold tracking-tight leading-[0.85]">

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/heart-og.png",
+        url: "/og-image",
         width: 1200,
         height: 630,
         alt: "Interactive Romance - Passionate stories that respond to your choices",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     title: "Interactive Romance Stories | Choose Your Own Adventure",
     description:
       "Experience passionate interactive romance stories where your choices shape the narrative. Immersive erotic fiction with real chemistry and irresistible tension.",
-    images: ["/heart-og.png"],
+    images: ["/og-image"],
     creator: "@interactive_romance",
   },
   robots: {

@@ -38,10 +38,10 @@ export function StoryDemo() {
         if (currentStory.choices) {
           setTimeout(() => {
             setShowChoices(true);
-          }, 1500); // Delay before choices appear
+          }, 500); // Delay before choices appear
         }
       }
-    }, 30); // Adjust speed here (lower = faster)
+    }, 50); // Adjust speed here (lower = faster)
 
     return () => clearInterval(typeInterval);
   }, [currentState, showThinking, currentStory.text, currentStory.choices]);
@@ -224,18 +224,6 @@ export function StoryDemo() {
                     : "opacity-0 translate-y-8 pointer-events-none"
                 }`}
               >
-                <div
-                  className={`text-center transition-all duration-500 ${
-                    !showThinking && showChoices
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-4"
-                  }`}
-                >
-                  <p className="text-base sm:text-lg text-accent font-medium mb-6 sm:mb-8">
-                    What do you do next?
-                  </p>
-                </div>
-
                 {currentStory.choices.map((choice, index) => (
                   <Button
                     key={index}

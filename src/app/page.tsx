@@ -133,10 +133,9 @@ export default function Home() {
               </h1>
 
               <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4">
-                Passionate stories with real chemistry and{" "}
-                <em className="text-primary">irresistible tension</em>. Choose
-                how the romance unfolds, control the pace, explore every spark
-                of desire.
+                Don&apos;t just imagine your fantasies—
+                <em className="text-primary">read them</em>. You guide the
+                story, and the story responds.
               </p>
             </div>
 
@@ -197,7 +196,7 @@ export default function Home() {
                 Ready for <span className="text-primary">More</span>?
               </h2>
               <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground px-4">
-                Join a community of readers who love beautifully crafted stories
+                Get 75% off your first three months by joining the waitlist.
               </p>
             </div>
 

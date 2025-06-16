@@ -91,12 +91,17 @@ export function WaitlistForm() {
             <div className="text-4xl sm:text-5xl md:text-6xl">🔥</div>
             <div className="space-y-3 sm:space-y-4">
               <h3 className="text-2xl sm:text-3xl font-bold text-primary">
-                Welcome to the Inner Circle
+                You&apos;re in! Thanks for joining us.
               </h3>
               <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                You&apos;re on the list! We&apos;ll notify you as soon as we
-                launch with early access.
+                You&apos;re now part of an exclusive community. We&apos;ll
+                notify you first when we launch with your special 75% discount
+                locked in.
               </p>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 border border-primary/30 rounded-full text-sm font-medium text-primary">
+                <span>🎉</span>
+                <span>Your early access discount is secured</span>
+              </div>
             </div>
           </div>
         </div>
@@ -179,21 +184,57 @@ export function WaitlistForm() {
         {/* Header */}
         <div className="bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 p-4 sm:p-6 md:p-8 text-center border-b border-primary/20">
           <div className="space-y-3 sm:space-y-4">
+            <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-2">
+              <span>Join 500+ early access members</span>
+            </div>
             <h3 className="text-xl sm:text-2xl font-bold text-foreground">
-              Join the Launch Waitlist
+              Join Our Early Access Community
             </h3>
-            <p className="text-base sm:text-lg text-muted-foreground">
-              Be among the first to experience our interactive stories when we
-              launch —{" "}
-              <span className="text-primary font-semibold">
-                and get 75% off your first three months
-              </span>
-            </p>
+            <div className="space-y-2">
+              <p className="text-base sm:text-lg text-muted-foreground">
+                Be part of something extraordinary. Early access to our
+                interactive stories platform
+              </p>
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/20 border border-primary/30 rounded-full">
+                <span className="text-xs font-medium text-primary">
+                  LIMITED TIME
+                </span>
+                <span className="text-sm text-muted-foreground">•</span>
+                <span className="text-sm font-semibold text-primary">
+                  75% OFF
+                </span>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Form */}
         <div className="p-4 sm:p-6 md:p-8">
+          {/* Benefits */}
+          <div className="mb-6 p-4 bg-gradient-to-r from-primary/5 to-accent/5 border border-primary/20 rounded-xl">
+            <h4 className="text-sm font-semibold text-primary mb-3">
+              Early Access Benefits:
+            </h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                <span>75% off first 3 months</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                <span>Exclusive early access</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                <span>Priority feature requests</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                <span>Direct input on features</span>
+              </div>
+            </div>
+          </div>
+
           <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             <div className="space-y-3 sm:space-y-4">
               <label className="block text-sm font-medium text-muted-foreground text-left">
@@ -227,7 +268,7 @@ export function WaitlistForm() {
                   <span className="sm:hidden">Securing...</span>
                 </div>
               ) : (
-                "Join Waitlist"
+                "Claim Your Early Access"
               )}
             </Button>
           </form>

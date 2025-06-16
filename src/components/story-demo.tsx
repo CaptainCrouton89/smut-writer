@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { storyStates } from "../data/story-data";
 import { Button } from "./ui/button";
-import { storyStates, type StoryState } from "../data/story-data";
 
 export function StoryDemo() {
   const [currentState, setCurrentState] = useState("start");

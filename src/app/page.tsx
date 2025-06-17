@@ -118,22 +118,10 @@ export default function Home() {
 
       {/* Hero Section - Full immersion */}
       <section className="relative min-h-screen flex items-center justify-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/3" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/3 pointer-events-none" />
 
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
           <div className="max-w-6xl mx-auto space-y-12 md:space-y-16">
-            {/* Logo */}
-            <div className="w-full max-w-[200px] mx-auto mb-8">
-              <Image
-                src="/smut-logo.png"
-                alt="Interactive Romance Logo"
-                width={140}
-                height={140}
-                className="w-full h-auto"
-                priority
-              />
-            </div>
-            
             {/* Main headline - bold and seductive */}
             <div className="space-y-6 md:space-y-8">
               <h1 className="text-4xl sm:text-5xl md:text-8xl lg:text-9xl font-bold tracking-tight leading-[0.85]">
@@ -153,15 +141,19 @@ export default function Home() {
             </div>
 
             {/* Bold CTA */}
-            <div className="pt-8 md:pt-12 pb-24 md:pb-32">
+            <div className="pt-8 md:pt-12 pb-24 md:pb-32 relative z-20">
               <Button
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 sm:px-12 md:px-16 py-4 sm:py-5 md:py-6 text-lg sm:text-xl font-bold rounded-full shadow-2xl hover:shadow-primary/20 transition-all duration-300 border border-primary/20"
-                onClick={() =>
-                  document
-                    .getElementById("experience")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={(e) => {
+                  e.preventDefault();
+                  console.log("Button clicked");
+                  const element = document.getElementById("experience");
+                  console.log("Experience element:", element);
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
               >
                 Try for Yourself
               </Button>
@@ -235,27 +227,36 @@ export default function Home() {
             </div>
 
             <div className="p-6 sm:p-8 md:p-12">
-              <div className="space-y-4">
-                <p className="text-lg text-muted-foreground">
-                  Experience the cross roads of romance and pick your own adventure stories. 
-                  Each decision you make creates a unique path, leading to different outcomes and 
-                  relationships. You pick the partner and setting and the story unfolds based on what
-                  you want.. 
-                </p>
-                <p className="text-lg text-muted-foreground">
-                  Our goal is to create the most accessible and personalizable romance stories for our
-                  users to create, save, edit, and enjoy as much as they want. We will make a fun platform for
-                  readers to be able to create their own stories and share with others. Let&apos;s build a
-                  community together!
-                </p>
-                <p className="text-lg text-muted-foreground">
-                  This email sign up is for us to gaige interest and have a pool of users to get feedback from so 
-                  that we can make the best product for you. It helps us deliver the best experience for you so we
-                  want to reward signups with a discount. This does not mean you need to subscribe or anything like that.
-                  There will be a free version and we are not collecting any payment information yet. The email list
-                  is just to keep you in the loop on what we are working on and when we launch. If you do decide to get
-                  the premium membership after launch, you will get 75% off the first three months as a thank you. 
-                </p>
+              <div className="space-y-4 text-lg text-muted-foreground text-left">
+                <div className="space-y-6">
+                  <div className="space-y-2">
+                    <strong>Choose Your Own Romance Adventure</strong>
+                    <ul className="list-disc pl-5 space-y-1">
+                      <li>Dive into interactive stories where <em>your choices shape the outcome</em>.</li>
+                      <li>Pick your partner and setting, and follow unique story paths based on your decisions.</li>
+                    </ul>
+                  </div>
+
+                  <div className="space-y-2">
+                    <strong>Our Mission</strong>
+                    <ul className="list-disc pl-5 space-y-1">
+                      <li>Create the <em>most accessible and customizable romance stories</em>.</li>
+                      <li>Enable users to <em>create, save, edit, and enjoy</em> their own stories.</li>
+                      <li>Build a fun platform and supportive community for sharing stories.</li>
+                    </ul>
+                  </div>
+
+                  <div className="space-y-2">
+                    <strong>Why Sign Up With Your Email?</strong>
+                    <ul className="list-disc pl-5 space-y-1">
+                      <li>Helps us gauge interest and gather valuable feedback.</li>
+                      <li>Stay updated on our progress and launch plans.</li>
+                      <li><strong>No payment required</strong> — just early access and updates.</li>
+                      <li>A <strong>free version</strong> will always be available.</li>
+                      <li>Early signups get <strong>75% off the first 3 months</strong> of premium (optional).</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -265,7 +266,18 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-16 border-t border-primary/20 relative">
         <div className="absolute inset-0 bg-card/20" />
-        <div className="relative container mx-auto px-6 lg:px-8 text-center">
+        <div className="relative container mx-auto px-6 lg:px-8 text-center space-y-8">
+          {/* Logo */}
+          <div className="w-full max-w-[200px] mx-auto">
+            <Image
+              src="/smut-logo.png"
+              alt="Interactive Romance Logo"
+              width={140}
+              height={140}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
           <p className="text-muted-foreground/60">
             &copy; 2025 • Secrets Stay Safe
           </p>

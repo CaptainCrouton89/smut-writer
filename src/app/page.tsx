@@ -153,7 +153,7 @@ export default function Home() {
             </div>
 
             {/* Bold CTA */}
-            <div className="pt-8 md:pt-12 pb-16 md:pb-20">
+            <div className="pt-8 md:pt-12 pb-24 md:pb-32">
               <Button
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 sm:px-12 md:px-16 py-4 sm:py-5 md:py-6 text-lg sm:text-xl font-bold rounded-full shadow-2xl hover:shadow-primary/20 transition-all duration-300 border border-primary/20"

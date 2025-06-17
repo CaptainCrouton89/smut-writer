@@ -245,7 +245,7 @@ export default function Home() {
                 <p className="text-lg text-muted-foreground">
                   Our goal is to create the most accessible and personalizable romance stories for our
                   users to create, save, edit, and enjoy as much as they want. We will make a fun platform for
-                  readers to be able to create their own stories and share with others. Let's build a
+                  readers to be able to create their own stories and share with others. Let&apos;s build a
                   community together!
                 </p>
                 <p className="text-lg text-muted-foreground">

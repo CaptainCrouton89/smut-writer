@@ -220,6 +220,48 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Bold CTA */}
+      <div className="pt-8 md:pt-12 pb-24 md:pb-32 flex flex-col items-center gap-8">
+        <div id="learn-more" className={`max-w-2xl text-center space-y-4 transition-all duration-300`}>
+          {/* Background glow */}
+          <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-accent/5 to-accent/10 rounded-3xl blur-xl opacity-40" />
+
+          <div className="relative bg-card/60 backdrop-blur-sm border border-accent/30 rounded-3xl overflow-hidden">
+            {/* Header with gradient */}
+            <div className="bg-gradient-to-r from-accent/20 via-accent/10 to-accent/20 p-4 sm:p-6 md:p-8 text-center border-b border-accent/20">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground">
+                About Our Platform
+              </h3>
+            </div>
+
+            <div className="p-6 sm:p-8 md:p-12">
+              <div className="space-y-4">
+                <p className="text-lg text-muted-foreground">
+                  Experience the cross roads of romance and pick your own adventure stories. 
+                  Each decision you make creates a unique path, leading to different outcomes and 
+                  relationships. You pick the partner and setting and the story unfolds based on what
+                  you want.. 
+                </p>
+                <p className="text-lg text-muted-foreground">
+                  Our goal is to create the most accessible and personalizable romance stories for our
+                  users to create, save, edit, and enjoy as much as they want. We will make a fun platform for
+                  readers to be able to create their own stories and share with others. Let's build a
+                  community together!
+                </p>
+                <p className="text-lg text-muted-foreground">
+                  This email sign up is for us to gaige interest and have a pool of users to get feedback from so 
+                  that we can make the best product for you. It helps us deliver the best experience for you so we
+                  want to reward signups with a discount. This does not mean you need to subscribe or anything like that.
+                  There will be a free version and we are not collecting any payment information yet. The email list
+                  is just to keep you in the loop on what we are working on and when we launch. If you do decide to get
+                  the premium membership after launch, you will get 75% off the first three months as a thank you. 
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Footer */}
       <footer className="py-16 border-t border-primary/20 relative">
         <div className="absolute inset-0 bg-card/20" />

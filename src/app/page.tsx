@@ -268,7 +268,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-card/20" />
         <div className="relative container mx-auto px-6 lg:px-8 text-center space-y-8">
           {/* Logo */}
-          <div className="w-full max-w-[200px] mx-auto">
+          <div className="w-full max-w-[100px] mx-auto">
             <Image
               src="/smut-logo.png"
               alt="Interactive Romance Logo"

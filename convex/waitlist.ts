@@ -2,7 +2,7 @@ import { mutation, query } from "./_generated/server";
 import { v } from "convex/values";
 
 export const add = mutation({
-  args: { email: v.string() },
+  args: { email: v.string(), waitlistSource: v.string() },
   handler: async (ctx, args) => {
     // Check if email already exists
     const existing = await ctx.db
@@ -19,6 +19,7 @@ export const add = mutation({
     const waitlistId = await ctx.db.insert("waitlist", {
       email: args.email,
       joinDate,
+      waitlistSource: args.waitlistSource,
     });
     
     return waitlistId;

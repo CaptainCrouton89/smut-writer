@@ -19,7 +19,7 @@ export function WaitlistForm() {
     setError("");
 
     try {
-      await addToWaitlist({ email });
+      await addToWaitlist({ email, waitlistSource: "landing-page:tree" });
       setSubmitted(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to join waitlist");

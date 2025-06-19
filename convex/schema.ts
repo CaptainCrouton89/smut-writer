@@ -5,5 +5,6 @@ export default defineSchema({
   waitlist: defineTable({
     email: v.string(),
     joinDate: v.string(),
+    waitlistSource: v.string(),
   }).index("by_email", ["email"]),
 });

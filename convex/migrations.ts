@@ -7,17 +7,22 @@ export const addWaitlistSourceToExistingRows = internalMutation({
     
     console.log(`Found ${existingEntries.length} existing waitlist entries`);
     
+    let updatedCount = 0;
+    
     // Update each entry that doesn't have waitlistSource
     for (const entry of existingEntries) {
-      if (!("waitlistSource" in entry)) {
+      if (!entry.waitlistSource) {
         await ctx.db.patch(entry._id, {
           waitlistSource: "landing-page:tree"
         });
-        console.log(`Updated entry ${entry._id} with default waitlistSource`);
+        console.log(`Updated entry ${entry._id} (${entry.email}) with default waitlistSource`);
+        updatedCount++;
+      } else {
+        console.log(`Entry ${entry._id} (${entry.email}) already has waitlistSource: ${entry.waitlistSource}`);
       }
     }
     
-    console.log("Migration completed");
-    return { updated: existingEntries.length };
+    console.log(`Migration completed. Updated ${updatedCount} out of ${existingEntries.length} entries.`);
+    return { updated: updatedCount, total: existingEntries.length };
   },
 });

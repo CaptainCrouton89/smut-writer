@@ -41,7 +41,7 @@ export function StoryDemo() {
           }, 500); // Delay before choices appear
         }
       }
-    }, 50); // Adjust speed here (lower = faster)
+    }, 40); // Adjust speed here (lower = faster)
 
     return () => clearInterval(typeInterval);
   }, [currentState, showThinking, currentStory.text, currentStory.choices]);

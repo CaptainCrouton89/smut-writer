@@ -214,9 +214,12 @@ export default function Home() {
 
       {/* Bold CTA */}
       <div className="pt-8 md:pt-12 pb-24 md:pb-32 flex flex-col items-center gap-8">
-        <div id="learn-more" className={`max-w-2xl text-center space-y-4 transition-all duration-300`}>
+        <div
+          id="learn-more"
+          className={`max-w-2xl text-center space-y-4 transition-all duration-300`}
+        >
           {/* Background glow */}
-          <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-accent/5 to-accent/10 rounded-3xl blur-xl opacity-40" />
+          {/* <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-accent/5 to-accent/10 rounded-3xl blur-xl opacity-40" /> */}
 
           <div className="relative bg-card/60 backdrop-blur-sm border border-accent/30 rounded-3xl overflow-hidden">
             {/* Header with gradient */}
@@ -232,28 +235,58 @@ export default function Home() {
                   <div className="space-y-2">
                     <strong>Choose Your Own Romance Adventure</strong>
                     <ul className="list-disc pl-5 space-y-1">
-                      <li>Dive into interactive stories where <em>your choices shape the outcome</em>.</li>
-                      <li>Pick your partner and setting, and follow unique story paths based on your decisions.</li>
+                      <li>
+                        Dive into interactive stories where{" "}
+                        <em>your choices shape the outcome</em>.
+                      </li>
+                      <li>
+                        Pick your partner and setting, and follow unique story
+                        paths based on your decisions.
+                      </li>
                     </ul>
                   </div>
 
                   <div className="space-y-2">
                     <strong>Our Mission</strong>
                     <ul className="list-disc pl-5 space-y-1">
-                      <li>Create the <em>most accessible and customizable romance stories</em>.</li>
-                      <li>Enable users to <em>create, save, edit, and enjoy</em> their own stories.</li>
-                      <li>Build a fun platform and supportive community for sharing stories.</li>
+                      <li>
+                        Create the{" "}
+                        <em>
+                          most accessible and customizable romance stories
+                        </em>
+                        .
+                      </li>
+                      <li>
+                        Enable users to <em>create, save, edit, and enjoy</em>{" "}
+                        their own stories.
+                      </li>
+                      <li>
+                        Build a fun platform and supportive community for
+                        sharing stories.
+                      </li>
                     </ul>
                   </div>
 
                   <div className="space-y-2">
                     <strong>Why Sign Up With Your Email?</strong>
                     <ul className="list-disc pl-5 space-y-1">
-                      <li>Helps us gauge interest and gather valuable feedback.</li>
+                      <li>
+                        Helps us gauge interest and gather valuable feedback.
+                      </li>
                       <li>Stay updated on our progress and launch plans.</li>
-                      <li><strong>No payment required</strong> — just early access and updates.</li>
-                      <li>A <strong>free version</strong> will always be available.</li>
-                      <li>Early signups get <strong>75% off the first 3 months</strong> of premium (optional).</li>
+                      <li>
+                        <strong>No payment required</strong> — just early access
+                        and updates.
+                      </li>
+                      <li>
+                        A <strong>free version</strong> will always be
+                        available.
+                      </li>
+                      <li>
+                        Early signups get{" "}
+                        <strong>75% off the first 3 months</strong> of premium
+                        (optional).
+                      </li>
                     </ul>
                   </div>
                 </div>
